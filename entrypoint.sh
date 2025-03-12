@@ -107,6 +107,8 @@ function check_required_options {
   do
     echo $option
     echo ${options[$option]}
+    echo $options
+    echo ${options["format"]}
     local value="${options[$option]}"
     if [[ -z "$value" || "$value" == "$DEFAULT" ]]; then
       die "$option is required, but not set (got: $value)!"
