@@ -49,7 +49,6 @@ function setup_options {
 
   while getopts ":k:K:f:o:r:F:P:w:W:d:R:n:N:S:s:t:D:V:p:" OPT; do
     case $OPT in
-      echo $OPTARG
       k) options["api_key"]="$OPTARG" ;;
       K) options["command"]="$OPTARG" ;;
       f) options["format"]="$OPTARG" ;;
@@ -106,6 +105,8 @@ function check_option_true {
 function check_required_options {
   for option in $@
   do
+    echo $option
+    echo ${options[$option]}
     local value="${options[$option]}"
     if [[ -z "$value" || "$value" == "$DEFAULT" ]]; then
       die "$option is required, but not set (got: $value)!"
