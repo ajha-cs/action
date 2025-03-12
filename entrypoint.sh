@@ -49,6 +49,7 @@ function setup_options {
 
   while getopts ":k:K:f:o:r:F:P:w:W:d:R:n:N:S:s:t:D:V:p:" OPT; do
     case $OPT in
+      echo $OPTARG
       k) options["api_key"]="$OPTARG" ;;
       K) options["command"]="$OPTARG" ;;
       f) options["format"]="$OPTARG" ;;
