@@ -120,6 +120,7 @@ function check_required_options {
 function execute_push {
   echo "hello"
   echo $format
+  echo "hello2"
   check_required_options format owner repo file
   echo "hello1"
   local context="${options["owner"]}/${options["repo"]}"
